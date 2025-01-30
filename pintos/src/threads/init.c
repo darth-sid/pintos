@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <readline.h>
 #include "devices/kbd.h"
 #include "devices/input.h"
 #include "devices/serial.h"
@@ -134,6 +135,16 @@ pintos_init (void)
     run_actions (argv);
   } else {
     // TODO: no command line passed to kernel. Run interactively 
+    size_t size = 128;
+    char line[size];
+    line[0] = '\0';
+    while(strcmp(line,"exit") != 0){
+      printf("ICS143A>");
+      readline(line,size);
+      if (strcmp(line, "whoami") == 0) printf("sid\n");
+    }
+
+
   }
 
   /* Finish up. */
