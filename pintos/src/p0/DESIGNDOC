@@ -1,0 +1,49 @@
+			+-------------------------+
+			|      CompSci 143A       |
+			| PROJECT 0: Getting Real |
+			|     DESIGN DOCUMENT     |
+			+-------------------------+
+				   
+---- AUTHOR ----
+
+>> Fill in your name and email address.
+
+Siddharth Ajay sid.ajay05@gmail.com
+
+---- PRELIMINARIES ----
+
+>> If you have any preliminary comments on your submission, or notes for the
+>> TAs, please give them here.
+
+>> Please cite any offline or online sources you consulted while
+>> preparing your submission, other than the Pintos documentation, course
+>> text, lecture notes, and course staff.
+
+			     Booting Pintos
+			     ==============
+
+---- QUESTIONS ---- 
+>> Put the screenshots of Pintos running in src/p0.
+>> A1: Is there any particular issue that you would like us to know?
+No
+
+			     Kernel Monitor
+			     ==============
+
+---- DATA STRUCTURES ----
+
+>> C1: Copy here the declaration of each new or changed `struct' or
+>> `struct' member, global or static variable, `typedef', or
+>> enumeration.  Identify the purpose of each in 25 words or less.
+
+---- ALGORITHMS ----
+>> C2: Explain how you read and write to the console for the kernel monitor.
+For input, I wrote a readline function that accepts a buffer and uses input_getc
+to monitor keyboard input and subsequently add the inputted char to the console
+and passed-in buffer until '\n' or '\r' is read
+For output, I just used printf for most of it and putchar in order to reflect
+keyboard input to the console inside readline
+
+>> C3: Any additional enhancement you implement?
+Assuming it wasn't a requirement, readline rewinds the console output and buffer
+when it receives a backspace
